@@ -14,3 +14,38 @@
 .cxx
 local.properties
 keystore.properties
+
+# IDE
+.idea/
+*.iml
+
+# Build output
+/build
+*/build/
+
+# Gradle
+.gradle/
+/local.properties
+
+# OS
+.DS_Store
+
+# Kotlin/Java
+*.class
+*.jar
+*.war
+*.apk
+
+# Logs
+*.log
+
+#other
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/captures
+.externalNativeBuild
+.cxx
