@@ -4,5 +4,5 @@ import com.example.domain.entities.Inventory
 import com.example.domain.utils.Result
 
 interface InventoryRepository {
-    suspend fun getInventory(steamId : String) : Result<Inventory>
+    suspend fun getInventory() : Result<Inventory>
 }

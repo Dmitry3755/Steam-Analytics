@@ -27,12 +27,9 @@ class InventoryViewModel @Inject constructor(
     var steamId: MutableState<String> = mutableStateOf("")
     lateinit var inventoryItemList: MutableList<InventoryItem>
 
-    suspend fun getInventory(resultViewError: MutableState<ViewError>): Result<Inventory> {
-        resultViewError.value = SteamIdValidation.isSteamIdVerify(steamId.value)
-        return when (resultViewError.value.isError.value) {
-            true -> Result.Error(Exception())
-            false -> getInventoryUseCase.invoke(steamId.value)
-        }
+    suspend fun getInventory(): Result<Inventory> {
+
+        return getInventoryUseCase.invoke()
     }
 
     suspend fun updateInventoryDb() {

@@ -5,5 +5,5 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 class GetInventoryUseCase @Inject constructor(private val inventoryRepository: InventoryRepository) {
-    suspend operator fun invoke(steamId : String) = inventoryRepository.getInventory(steamId)
+    suspend operator fun invoke() = inventoryRepository.getInventory()
 }

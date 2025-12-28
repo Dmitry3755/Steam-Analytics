@@ -15,6 +15,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Steam analytics"
 include(":app")
-include(":app:mylibrary")
 include(":domain")
 include(":data")
+include(":core")
