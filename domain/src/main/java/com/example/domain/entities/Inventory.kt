@@ -1,5 +1,6 @@
 package com.example.domain.entities
 
 data class Inventory (
-    val inventory: List<InventoryItem>
+    val assets: List<Assets>,
+    val descriptions: List<InventoryItem>
 )

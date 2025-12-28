@@ -1,6 +1,5 @@
 package com.example.data.repositories
 
-import android.util.Log
 import com.example.data.api.InventoryApi
 import com.example.data.entities.InventoryApiResponse
 import com.example.data.mappers.toInventory
@@ -17,17 +16,17 @@ import javax.inject.Inject
 @ViewModelScoped
 class InventoryRepositoryImpl @Inject constructor(private val inventoryApi: InventoryApi) :
     InventoryRepository {
-    override suspend fun getInventory(): Result<Inventory> {
+    override suspend fun getInventory(steamId: String): Result<Inventory> {
         return withContext(Dispatchers.IO) {
+            lateinit var response: Response<InventoryApiResponse>
             try {
-                val response : Response<InventoryApiResponse> = inventoryApi.get()
+                response = inventoryApi.get(steamId, "russian")
                 if (response.isSuccessful) {
                     Result.Success(response.body()!!.toInventory())
                 } else {
                     Result.Error(Exception(response.message()))
                 }
             } catch (e: Exception) {
-                Log.e("Inventory Request", e.message.toString())
                 Result.Error(e)
             }
         }

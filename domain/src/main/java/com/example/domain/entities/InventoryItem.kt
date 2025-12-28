@@ -12,8 +12,5 @@ data class InventoryItem(
     val marketHashName: String,
     val marketTradableRestriction: Int,
     val marketable: Int,
-    val tags : List<TagItem>,
-    var count: Int?,
-    var medianPrice: String?,
-    var priceDate: String?,
+    val tags : List<TagItem>
 )

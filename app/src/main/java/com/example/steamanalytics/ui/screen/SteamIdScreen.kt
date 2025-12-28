@@ -110,10 +110,10 @@ fun SteamIdScreen(
                         withContext(Dispatchers.IO) {
                             appViewModel.internetState.value = CheckInternetState(context)
                             if (appViewModel.internetState.value) {
-                                val result = inventoryViewModel.getInventory()
+                                val result = inventoryViewModel.getInventory(verifyResultViewError)
                                 if (result is Result.Success) {
                                     inventoryViewModel.inventoryItemList =
-                                        result.data.inventory.toMutableList()
+                                        result.data.descriptions.toMutableList()
                                     inventoryViewModel.insertItemsDb()
                                     itemViewModel.getPriceAllOfItemsDb()
                                     navigate(coroutineScope, navController)

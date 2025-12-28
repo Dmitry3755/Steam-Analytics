@@ -37,10 +37,10 @@ android {
 
     signingConfigs {
         create("config") {
-            keyAlias = "some"
-            keyPassword = "Di192502$#"
-            storeFile = file("C:\\Users\\Balthazar\\not_real_release.jks")
-            storePassword = "Di192502$#"
+            keyAlias = keystoreProperties["keyAlias"] as String
+            keyPassword = keystoreProperties["keyPassword"] as String
+            storeFile = file(keystoreProperties["storeFile"] as String)
+            storePassword = keystoreProperties["storePassword"] as String
 
         }
     }
@@ -84,7 +84,7 @@ dependencies {
     implementation("androidx.room:room-ktx:2.6.1")
     val retrofit2_version = "2.9.0"
 
-    implementation(platform("androidx.compose:compose-bom:2024.02.01"))
+    implementation("androidx.compose.material:material:1.6.3")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")

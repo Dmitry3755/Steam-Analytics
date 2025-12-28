@@ -23,7 +23,11 @@ fun NetworkImage(
     columnScope.run {
         AsyncImage(
             modifier = Modifier.weight(weight),
-            model = url,
+            model = if (!stickerOnWeapon) {
+                "https://community.akamai.steamstatic.com/economy/image/$url"
+            } else {
+                url
+            },
             placeholder = painterResource(R.drawable.ic_steam),
             contentDescription = null,
             alignment = Alignment.TopCenter,

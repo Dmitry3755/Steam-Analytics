@@ -23,9 +23,7 @@ object DatabaseModule {
             appContext,
             AppDatabase::class.java,
             "steam_analytics.db"
-        )
-        .fallbackToDestructiveMigration()
-        .build()
+        ).build()
     }
 
     @Provides

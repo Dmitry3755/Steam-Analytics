@@ -5,6 +5,7 @@ import com.example.domain.entities.Inventory
 
 fun InventoryApiResponse.toInventory(): Inventory {
     return Inventory(
-        inventory = this.inventory.mapIndexed { index, itemApiResponse -> itemApiResponse.toItem(index + 1) }
+        assets = this.assets.map { it.toAssets() },
+        descriptions = this.descriptions.mapIndexed { index, itemApiResponse -> itemApiResponse.toItem(index + 1) }
     )
 }

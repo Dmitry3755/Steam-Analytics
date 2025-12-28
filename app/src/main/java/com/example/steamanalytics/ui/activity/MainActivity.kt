@@ -1,10 +1,12 @@
 package com.example.steamanalytics.ui.activity
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.steamanalytics.ui.navigation.NavGraph
 import com.example.steamanalytics.ui.theme.AppTheme
