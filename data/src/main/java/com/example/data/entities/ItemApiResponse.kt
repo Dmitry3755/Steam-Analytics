@@ -1,5 +1,6 @@
 package com.example.data.entities
 
+import android.provider.ContactsContract.Data
 import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.Entity
@@ -45,5 +46,14 @@ data class ItemApiResponse(
     var marketable: Int,
     @SerializedName("tags")
     @TypeConverters(TagItemApiResponseConverter::class)
-    var tags: List<TagItemApiResponse>
+    var tags: List<TagItemApiResponse>,
+    @ColumnInfo(name = "count")
+    @SerializedName("count")
+    var count: Int?,
+    @ColumnInfo(name = "median_price")
+    @SerializedName("median_price")
+    var medianPrice: String?,
+    @ColumnInfo(name = "price_date")
+    @SerializedName("price_date")
+    var priceDate: String?,
 )

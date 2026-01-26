@@ -16,7 +16,10 @@ fun ItemApiResponse.toItem(steamId : Int): InventoryItem {
         marketHashName = this.marketHashName,
         marketTradableRestriction = this.marketTradableRestriction,
         marketable = this.marketable,
-        tags = this.tags.map { it.toItemTag() }
+        tags = this.tags.map { it.toItemTag() },
+        count =  this.count,
+        medianPrice = this.medianPrice,
+        priceDate = this.priceDate
     )
 }
 
@@ -33,6 +36,9 @@ fun InventoryItem.toItemApiResponse() : ItemApiResponse {
         marketHashName = this.marketHashName,
         marketTradableRestriction = this.marketTradableRestriction,
         marketable = this.marketable,
-        tags = this.tags.map { it.toTagItemApiResponse() }
+        tags = this.tags.map { it.toTagItemApiResponse() },
+        count =  this.count,
+        medianPrice = this.medianPrice,
+        priceDate = this.priceDate
     )
 }

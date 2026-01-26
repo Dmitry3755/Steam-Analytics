@@ -18,7 +18,7 @@ object NetworkModule {
     @ViewModelScoped
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://steamcommunity.com/")
+            .baseUrl("http://192.168.0.209:8288/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

@@ -13,7 +13,7 @@ import com.example.data.entities.ItemMarketApiResponse
 @Database(
     entities = [ItemApiResponse::class,
         ItemMarketApiResponse::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(DescriptionItemApiResponseConverter::class, TagItemApiResponseConverter::class)
