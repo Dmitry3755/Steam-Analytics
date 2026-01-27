@@ -1,0 +1,41 @@
+name: "🚨 Error"
+description: "Сообщить об ошибке в проекте"
+title: "[Error]: "
+labels: ["error"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Пожалуйста, опиши проблему подробно, чтобы мы могли её воспроизвести и исправить.
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: "🧩 Что произошло?"
+      placeholder: "Опиши баг и где он возникает"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: "🔁 Шаги для воспроизведения"
+      placeholder: |
+        1. Открыть приложение
+        2. Перейти на экран ...
+        3. Нажать ...
+        4. Увидеть ошибку
+
+  - type: input
+    id: expected-behavior
+    attributes:
+      label: "✅ Ожидаемое поведение"
+      placeholder: "Опиши, как должно работать"
+
+  - type: input
+    id: environment
+    attributes:
+      label: "⚙️ Среда"
+      placeholder: "Android 14, Pixel 7, версия 1.2.0"
