@@ -1,0 +1,98 @@
+name: 🐞 Bug / Fix
+description: Сообщить об ошибке или проблеме, требующей исправления
+title: "[FIX]: краткое описание проблемы"
+labels: ["bug", "fix"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за отчёт. Чем точнее описание — тем быстрее фикс.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание проблемы
+      description: Что именно работает неправильно?
+      placeholder: Чётко и по делу, без лишней лирики
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Шаги для воспроизведения
+      description: Как воспроизвести проблему
+      placeholder: |
+        1. Запустить приложение
+        2. Нажать ...
+        3. Получить ошибку
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ожидаемое поведение
+      description: Что должно происходить вместо этого
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Фактическое поведение
+      description: Что происходит сейчас
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Критичность
+      options:
+        - low (некритично)
+        - medium (мешает работе)
+        - high (блокер)
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Версия проекта
+      placeholder: v1.2.3 / commit hash
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Окружение
+      description: Где воспроизводится проблема
+      placeholder: |
+        OS: Android 14 / Windows 11
+        Device: Pixel 7
+        SDL: 2.30.x
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Логи / Stacktrace
+      description: Приложи логи, если есть
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Проверка
+      options:
+        - label: Я проверил, что похожей issue ещё нет
+          required: true
+        - label: Я могу помочь с тестированием фикса
+          required: false
